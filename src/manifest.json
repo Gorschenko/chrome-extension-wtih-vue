@@ -1,0 +1,21 @@
+{
+  "name": "Extension",
+  "version": "1.0.0",
+  "description": "Test",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://looch.io/*"],
+  "background": {
+      "service_worker": "background.js"
+  },
+  "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "css": ["css/main.css"],
+        "js": ["content.js"]
+      }
+    ],
+  "action": {
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
