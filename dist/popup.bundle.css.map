@@ -1,0 +1,1 @@
+{"version":3,"file":"popup.bundle.css","mappings":";;;AAAA;AACA;AACA;;;;ACDA;AACA;AACA","sources":["webpack://divo-extension/./src/styles/main.css","webpack://divo-extension/./src/styles/main.scss"],"sourcesContent":["body {\r\n  /* background: orange; */\r\n}","$color: gray;\r\nbody {\r\n  background: $color;\r\n  margin-bottom: 10px;\r\n}"],"names":[],"sourceRoot":""}
