@@ -14124,14 +14124,9 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
 /* harmony import */ var _App_App_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App/App.vue */ "./src/App/App.vue");
-const extension = document.createElement('div');
-extension.id = 'app';
-document.body.insertAdjacentElement('beforeend', extension); // import App from './App/App.vue';
-// const app = new Vue({
-//     el: '#app',
-//     render: createElement => createElement(App)
-// });
-
+const app = document.createElement('div');
+app.id = 'app';
+document.body.insertAdjacentElement('beforeend', app);
 
 
 (0,vue__WEBPACK_IMPORTED_MODULE_0__.createApp)(_App_App_vue__WEBPACK_IMPORTED_MODULE_1__["default"]).mount('#app');

@@ -1,16 +1,11 @@
 {
   "name": "divo-extension",
   "version": "1.0.0",
-  "description": "Extension",
-  "main": "index.js",
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "start": "webpack serve --mode development"
   },
-  "keywords": [
-    "extension"
-  ],
   "author": "divo",
   "license": "ISC",
   "devDependencies": {

@@ -10,13 +10,12 @@ module.exports = {
   entry: {
     // popup: ['@babel/polyfill', './src/popup.js'],
     popup: ['./src/popup.js'],
-    background: ['./src/background.js'],
-    content: ['./src/content.js'],
+    content: ['./src/content.js']
   },
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true // Вместо CleanWebpackPlugin
+    clean: true
   },
   resolve: {
     alias: {
@@ -29,7 +28,8 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       template: './src/popup.html',
-      filename: 'popup.html'
+      filename: 'popup.html',
+      chunks: ['popup'],
     }),
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css'
@@ -38,6 +38,10 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/manifest.json'),
+          to: path.resolve(__dirname, 'dist')
+        },
+        {
+          from: path.resolve(__dirname, 'src/background.js'),
           to: path.resolve(__dirname, 'dist')
         }
       ]

@@ -9,5 +9,4 @@
 import { createApp } from 'vue';
 import Popup from './Popup/Popup.vue';
 createApp(Popup).mount('#popup');
-import './styles/main.css'
 import './styles/main.scss'

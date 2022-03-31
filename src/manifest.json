@@ -5,7 +5,7 @@
   "permissions": ["storage", "tabs"],
   "host_permissions": ["https://looch.io/*"],
   "background": {
-      "service_worker": "background.bundle.js"
+      "service_worker": "background.js"
   },
   "content_scripts": [
       {
