@@ -6,7 +6,7 @@
 <script>
 export default {
   created() {
-    document.body.style.background = 'orange';
+    document.body.style.background = 'red';
   }
 }
 </script>

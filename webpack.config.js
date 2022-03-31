@@ -10,7 +10,8 @@ module.exports = {
   entry: {
     // popup: ['@babel/polyfill', './src/popup.js'],
     popup: ['./src/popup.js'],
-    content: ['./src/content.js']
+    content: ['./src/content.js'],
+    background: ['./src/background.js']
   },
   output: {
     filename: '[name].bundle.js',
@@ -23,7 +24,7 @@ module.exports = {
     }
   },
   devServer: {
-    port: 4200
+    port: 9000,
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -40,17 +41,13 @@ module.exports = {
           from: path.resolve(__dirname, 'src/manifest.json'),
           to: path.resolve(__dirname, 'dist')
         },
-        {
-          from: path.resolve(__dirname, 'src/background.js'),
-          to: path.resolve(__dirname, 'dist')
-        }
       ]
     }),
     new VueLoaderPlugin(),
     new webpack.DefinePlugin({
       "__VUE_OPTIONS_API__": true,
       "__VUE_PROD_DEVTOOLS__": false,
-    })
+    }),
   ],
   module: {
     rules: [
