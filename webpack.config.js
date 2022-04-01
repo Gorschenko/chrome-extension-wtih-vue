@@ -7,8 +7,11 @@ const { VueLoaderPlugin } = require('vue-loader')
 
 module.exports = {
   mode: 'development',
+  devtool: 'cheap-module-source-map',
+  devServer: {
+    port: 9000,
+  },
   entry: {
-    // popup: ['@babel/polyfill', './src/popup.js'],
     popup: ['./src/popup.js'],
     content: ['./src/content.js'],
     background: ['./src/background.js']
@@ -16,15 +19,14 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
-    clean: true
+    assetModuleFilename: 'assets/[name][ext]',
+    clean: true,
+    publicPath: '/'
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
-  },
-  devServer: {
-    port: 9000,
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -52,6 +54,15 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
+        test: /\.js$/,
+        exclude: '/node_modules/',
+        loader: 'babel-loader'
+      },
+      {
         test: /\.css$/,
         use: [
           {
@@ -71,32 +82,9 @@ module.exports = {
         ]
       },
       {
-        test: /\.vue$/,
-        loader: 'vue-loader'
-      },
-      {
-        test: /\.js$/,
-        exclude: '/node_modules/',
-        loader: 'babel-loader'
-      },
-      // {
-      //   test: /\.js$/,
-      //   exclude: '/node_modules/',
-      //   use: [
-      //     {
-      //       loader: 'babel-loader',
-      //       options: {
-      //         presets: [
-      //           '@babel/preset-env'
-      //         ],
-      //         plugins: [
-      //           '@babel/plugin/proposal-class-properties'
-      //         ]
-      //       }
-      //     }
-      //   ]
-      // }
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
+      }
     ]
   },
-  devtool: 'cheap-module-source-map',
 }

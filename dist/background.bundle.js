@@ -9,7 +9,6 @@ chrome.tabs.onActivated.addListener(activeInfo => {
     tabUrl: tab.url
   }));
   console.log('ActivatedTab:', activeInfo.tabId);
-  console.log('Two');
 });
 chrome.tabs.onUpdated.addListener((_, __, tab) => {
   chrome.storage.sync.set({

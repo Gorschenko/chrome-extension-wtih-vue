@@ -1,0 +1,55 @@
+.text {
+  color: $cl-text;
+  &_xl {
+    font-size: 19px;
+    line-height: 28px;
+  }
+  &_l {
+    font-size: 17px;
+    line-height: 28px;
+  }
+  &_m {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  &_s {
+    font-size: 13px;
+    line-height: 20px;
+  }
+  &_xs {
+    font-size: 11px;
+    line-height: 16px;
+  }
+  &_block {
+    display: block;
+  }
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 56px;
+}
+h2 {
+  font-size: 44px;
+  line-height: 48px;
+}
+h3 {
+  font-size: 36px;
+  line-height: 40px;
+}
+h4 {
+  font-size: 28px;
+  line-height: 32px;
+}
+h5 {
+  font-size: 24px;
+  line-height: 28px;
+}
+h6 {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.bold {
+  font-weight: 600;
+}

@@ -1,5 +1,23 @@
-$color: gray;
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'font.scss';
+@import 'button.scss';
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: 0;
+  outline: 0;
+  font-family: 'Inter', sans-serif;
+}
+
 body {
-  background: $color;
-  margin-bottom: 10px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: 0;
+  outline: 0;
+  font-family: 'Inter', sans-serif;
 }
