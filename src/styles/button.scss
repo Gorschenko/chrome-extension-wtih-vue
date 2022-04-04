@@ -2,6 +2,7 @@
   @include center;
   border-radius: 8px;
   cursor: pointer;
+  transition: 0.5s;
   &_s {
     padding: 6px 12px;
   }
@@ -15,10 +16,10 @@
   &_circle {
     border-radius: 50%;
   }
-  svg {
+  & svg {
     margin-right: 4px
   }
-  span + svg {
+  & span + svg {
     margin-right: 0;
     margin-left: 4px;
   }

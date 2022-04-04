@@ -5,7 +5,7 @@
         'extension__sidebar': true,
         'hidden': showExtension ? false : true
       }"
-      @click="showExtension = !showExtension"
+      @close="showExtension = !showExtension"
     />
     <TheStartButton
       :class="{

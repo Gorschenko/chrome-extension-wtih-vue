@@ -1,7 +1,7 @@
 <template>
   <aside class="sidebar">
     <div class="close-button__wrapper_end">
-      <button class="close-button">
+      <button class="close-button" @click="$emit('close')">
         <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0H14V2H0V0Z" fill="#0A2033"/>
         </svg>
@@ -27,11 +27,16 @@
       </button>
       <p class="text_s">
         <span class="text_primary">Don’t have an account? </span>
-        <a class="link link_hovered_primary">Sign up</a>
+        <a class="link link_hovered_primary" href="https://divo.ai/auth/sign-up">Sign up</a>
       </p>
     </div>
   </aside>
 </template>
+<script>
+export default {
+  emits: ['close']
+}
+</script>
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
 .sidebar {
