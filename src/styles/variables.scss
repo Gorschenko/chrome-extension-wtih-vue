@@ -1,6 +1,15 @@
 $cl-primary-900: #2B84D0;
 $cl-primary-800: #4090D5;
-
-$cl-text: white;
-
+$cl-primary-25: #F5F8FA;
 $cl-primary-hover: #2675B8;
+
+$t-primary: rgba(10, 32, 51, 1);
+$t-secondary: rgba(10, 32, 51, 0.5);
+$t-tetriary: rgba(10, 32, 51, 0.3);
+$t-simple: white;
+
+$bg-primary: rgba(255, 255, 255, 1);
+$bg-secondary: rgba(242, 242, 242, 1);
+$bg-tetriary: rgba(230, 230, 230, 1);
+
+$bs: 0 0 2px 2px $bg-secondary;

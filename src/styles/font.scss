@@ -1,5 +1,14 @@
 .text {
-  color: $cl-text;
+  color: $t-simple;
+  &_primary {
+    color: $t-primary;
+  }
+  &_secondary {
+    color: $t-secondary;
+  }
+  &_tetriary {
+    color: $t-tetriary;
+  }
   &_xl {
     font-size: 19px;
     line-height: 28px;
@@ -23,33 +32,39 @@
   &_block {
     display: block;
   }
+  &_bold {
+    font-weight: 600;
+  }
 }
-
-h1 {
-  font-size: 50px;
-  line-height: 56px;
+.title {
+  &_xxl {
+    font-size: 50px;
+    line-height: 56px;
+  }
+  &_xl {
+    font-size: 44px;
+    line-height: 48px;
+  }
+  &_l {
+    font-size: 36px;
+    line-height: 40px;
+  }
+  &_m {
+    font-size: 28px;
+    line-height: 32px;
+  }
+  &_s {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  &_xs {
+    font-size: 20px;
+    line-height: 24px;
+  }
 }
-h2 {
-  font-size: 44px;
-  line-height: 48px;
-}
-h3 {
-  font-size: 36px;
-  line-height: 40px;
-}
-h4 {
-  font-size: 28px;
-  line-height: 32px;
-}
-h5 {
-  font-size: 24px;
-  line-height: 28px;
-}
-h6 {
-  font-size: 20px;
-  line-height: 24px;
-}
-
-.bold {
-  font-weight: 600;
+.link {
+  color: $cl-primary-900;
+  &_hovered_primary:link {
+    color: $cl-primary-hover;
+  }
 }

@@ -24,6 +24,7 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
+    extensions: ['.js', '.vue'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }

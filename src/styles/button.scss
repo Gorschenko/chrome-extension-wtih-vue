@@ -1,0 +1,39 @@
+.button {
+  @include center;
+  border-radius: 8px;
+  cursor: pointer;
+  &_s {
+    padding: 6px 12px;
+  }
+  &_primary {
+    color: $t-simple;
+    background: $cl-primary-900;
+  }
+  &_hovered_primary:hover {
+    background: $cl-primary-hover;
+  }
+  &_circle {
+    border-radius: 50%;
+  }
+  svg {
+    margin-right: 4px
+  }
+  span + svg {
+    margin-right: 0;
+    margin-left: 4px;
+  }
+}
+
+.close-button {
+  @include center;
+  cursor: pointer;
+  padding: 11px 5px;
+  border-radius: 50%;
+  &:hover {
+    background: $bg-tetriary;
+  }
+  &__wrapper_end {
+    display: flex;
+    justify-content: end;
+  }
+}
