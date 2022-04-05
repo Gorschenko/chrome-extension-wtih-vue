@@ -1,32 +1,38 @@
 <template>
   <section class="extension">
-    <TheSidebar 
+
+    <aside
       :class="{
-        'extension__sidebar': true,
+        'extension__sidebar sidebar': true,
         'hidden': showSidebar ? false : true
       }"
-      @close="showSidebar = !showSidebar"
-    />
+    >
+      <TheNavigation class="sidebar__navigation" />
+      <BaseCloseButton @close="showSidebar = !showSidebar" />
+      <router-view class="sidebar__body"/>
+    </aside>
+
     <TheStartButton
       :class="{
-        'extension__start-button start-button': true,
+        'extension__start-button': true,
         'hidden': !showSidebar ? false : true
       }"
-      @click="showSidebar = !showSidebar" />
+      @click="showSidebar = !showSidebar"
+    />
+
   </section>
 </template>
 <script>
-import TheStartButton from './TheStartButton'
-import TheSidebar from './TheSidebar'
+import TheNavigation from './components/single/TheNavigation'
+import BaseCloseButton from './components/base/BaseCloseButton'
+import TheStartButton from './components/single/TheStartButton'
 import { ref } from 'vue'
 
 export default {
-  components: { TheStartButton, TheSidebar },
+  components: { BaseCloseButton, TheStartButton, TheNavigation },
   setup () {
     const showSidebar= ref(false)
-    return {
-      showSidebar
-    }
+    return { showSidebar }
   }
 }
 </script>
@@ -39,6 +45,8 @@ export default {
     position: fixed;
     top: 0;
     right: 0;
+    display: flex;
+    flex-direction: column;
     width: 320px;
     height: 100vh;
     transition: 0.5s;
@@ -50,6 +58,19 @@ export default {
     width: 32px;
     height: 74px;
     transition: 0.5s;
+  }
+}
+
+.sidebar {
+  padding: 16px;
+  background: $bg-primary;
+  box-shadow: $bs;
+  &__navigation {
+    position: absolute;
+    right: 100%;
+  }
+  &__body {
+    flex-grow: 1;
   }
 }
 .hidden {

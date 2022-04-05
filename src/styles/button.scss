@@ -24,17 +24,3 @@
     margin-left: 4px;
   }
 }
-
-.close-button {
-  @include center;
-  cursor: pointer;
-  padding: 11px 5px;
-  border-radius: 50%;
-  &:hover {
-    background: $bg-tetriary;
-  }
-  &__wrapper_end {
-    display: flex;
-    justify-content: end;
-  }
-}

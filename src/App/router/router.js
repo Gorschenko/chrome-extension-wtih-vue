@@ -1,11 +1,12 @@
 import { createRouter, createMemoryHistory } from 'vue-router'
-import TheLogin from '../TheLogin'
-import TheNotification from '../TheNotification'
+import AppAuthorization from '../views/AppAuthorization'
+import AppNotification from '../views/AppNotification'
+
 const router = createRouter({
   history: createMemoryHistory(),
   routes: [
-    { path: '/login', name: 'Login', component: TheLogin, alias: '/' },
-    { path: '/notification', name: 'Notification', component: TheNotification },
+    { path: '/authorization', name: 'Authorization', component: AppAuthorization, alias: '/' },
+    { path: '/notification', name: 'Notification', component: AppNotification },
   ]
 })
 
