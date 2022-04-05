@@ -8,6 +8,7 @@
       }"
     >
       <TheNavigation class="sidebar__navigation" />
+      {{ user }}
       <div class="sidebar__close-button">
         <BaseCloseButton @close="showSidebar = !showSidebar" />
       </div>
@@ -28,13 +29,22 @@
 import TheNavigation from './components/single/TheNavigation'
 import BaseCloseButton from '@/common/BaseCloseButton'
 import TheStartButton from './components/single/TheStartButton'
-import { ref } from 'vue'
+import { ref, watch, computed } from 'vue'
 
 export default {
   components: { BaseCloseButton, TheStartButton, TheNavigation },
   setup () {
+    const url = ref('')
+    const user = computed(() => {
+      const array = url.value.split('/')
+      return array[4]
+    })
+    chrome.runtime.onMessage.addListener(msg => url.value = msg.url)
+
     const showSidebar= ref(false)
-    return { showSidebar }
+    return { showSidebar, url, user }
+    // const port = chrome.runtime.connect()
+    // port.onMessage.addListener(msg => console.log(msg))
   }
 }
 </script>
