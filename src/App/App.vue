@@ -9,7 +9,8 @@
     >
       <TheNavigation class="sidebar__navigation" />
       <BaseCloseButton @close="showSidebar = !showSidebar" />
-      <router-view class="sidebar__body"/>
+      <router-view class="sidebar__body
+      "/>
     </aside>
 
     <TheStartButton
