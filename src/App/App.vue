@@ -8,9 +8,10 @@
       }"
     >
       <TheNavigation class="sidebar__navigation" />
-      <BaseCloseButton @close="showSidebar = !showSidebar" />
-      <router-view class="sidebar__body
-      "/>
+      <div class="sidebar__close-button">
+        <BaseCloseButton @close="showSidebar = !showSidebar" />
+      </div>
+      <router-view class="sidebar__body"/>
     </aside>
 
     <TheStartButton
@@ -25,7 +26,7 @@
 </template>
 <script>
 import TheNavigation from './components/single/TheNavigation'
-import BaseCloseButton from './components/base/BaseCloseButton'
+import BaseCloseButton from '@/common/BaseCloseButton'
 import TheStartButton from './components/single/TheStartButton'
 import { ref } from 'vue'
 
@@ -66,6 +67,10 @@ export default {
   padding: 16px;
   background: $bg-primary;
   box-shadow: $bs;
+  &__close-button {
+    display: flex;
+    justify-content: flex-end;
+  }
   &__navigation {
     position: absolute;
     right: 100%;

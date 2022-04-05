@@ -10,8 +10,22 @@
   margin-bottom: 24px;
 }
 
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+
 .row {
   display: flex;
+}
+
+.row_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .center {
