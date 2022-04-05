@@ -3,29 +3,29 @@
     <TheSidebar 
       :class="{
         'extension__sidebar': true,
-        'hidden': showExtension ? false : true
+        'hidden': showSidebar ? false : true
       }"
-      @close="showExtension = !showExtension"
+      @close="showSidebar = !showSidebar"
     />
     <TheStartButton
       :class="{
         'extension__start-button start-button': true,
-        'hidden': !showExtension ? false : true
+        'hidden': !showSidebar ? false : true
       }"
-      @click="showExtension = !showExtension"/>
+      @click="showSidebar = !showSidebar" />
   </section>
 </template>
 <script>
 import TheStartButton from './TheStartButton'
 import TheSidebar from './TheSidebar'
-import { ref } from 'vue';
+import { ref } from 'vue'
 
 export default {
   components: { TheStartButton, TheSidebar },
   setup () {
-    const showExtension = ref(false)
+    const showSidebar= ref(false)
     return {
-      showExtension
+      showSidebar
     }
   }
 }

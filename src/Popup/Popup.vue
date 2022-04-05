@@ -25,7 +25,7 @@
   </svg>
 </header>
 <div class="popup__body">
-  <h6 class="text title_xs text_primary mb-">Welcome to Buzz</h6>
+  <h6 class="text title_xs text_primary mb-8">Welcome to Buzz</h6>
   <p class="text_s mb-16">
     <span class="text_primary">Don’t have an account? </span>
     <a class="link link_hovered_primary" href="https://divo.ai/auth/sign-up">Sign up for free</a>

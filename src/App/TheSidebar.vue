@@ -1,5 +1,13 @@
 <template>
   <aside class="sidebar">
+    <nav class="navigation">
+      <router-link
+        v-for="route in routes"
+        :to="route.path"
+        :key="route"
+        class="text_m text_block"
+      >{{ route.name }}</router-link>
+    </nav>
     <div class="close-button__wrapper_end">
       <button class="close-button" @click="$emit('close')">
         <svg width="14" height="2" viewBox="0 0 14 2" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,12 +37,21 @@
         <span class="text_primary">Don’t have an account? </span>
         <a class="link link_hovered_primary" href="https://divo.ai/auth/sign-up">Sign up</a>
       </p>
+      <router-view />
     </div>
   </aside>
 </template>
 <script>
+import { useRouter } from 'vue-router'
 export default {
-  emits: ['close']
+  emits: ['close'],
+  setup () {
+    const router = useRouter()
+    const routes = router.options.routes
+    return {
+      routes
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -47,5 +64,13 @@ export default {
     @include center_column;
     height: 100%;
   }
+}
+.navigation {
+  position: absolute;
+  right: 100%;
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background: lightseagreen;
 }
 </style>
