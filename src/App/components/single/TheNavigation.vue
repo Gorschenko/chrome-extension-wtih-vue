@@ -26,7 +26,5 @@ export default {
 .navigation {
   display: flex;
   gap: 8px;
-  padding: 10px;
-  background: lightseagreen;
 }
 </style>

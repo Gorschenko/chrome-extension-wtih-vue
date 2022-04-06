@@ -7,8 +7,15 @@
         'hidden': showSidebar ? false : true
       }"
     >
-      <TheNavigation class="sidebar__navigation" />
-      {{ user }}
+      <div class="sidebar__test-info">
+        <span class="text text_block text_l text_bold">Test info:</span>
+        <TheNavigation />
+        <span class="text text_block text_l text_bold">User: </span>
+        <span class="text text_block text_primary text_m text_bold">{{ user }}</span>
+        <button class="button button_s button_primary" @click="loadInfo">Load info</button>
+        <span class="text text_block text_l text_bold">Info about user: </span>
+        <span class="text text_block text_primary text_m text_bold">{{ userInfo }}</span>
+      </div>
       <div class="sidebar__close-button">
         <BaseCloseButton @close="showSidebar = !showSidebar" />
       </div>
@@ -29,22 +36,27 @@
 import TheNavigation from './components/single/TheNavigation'
 import BaseCloseButton from '@/common/BaseCloseButton'
 import TheStartButton from './components/single/TheStartButton'
-import { ref, watch, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 
 export default {
   components: { BaseCloseButton, TheStartButton, TheNavigation },
   setup () {
-    const url = ref('')
-    const user = computed(() => {
-      const array = url.value.split('/')
-      return array[4]
-    })
     chrome.runtime.onMessage.addListener(msg => url.value = msg.url)
-
+    const url = ref('')
+    const user = computed(() => url.value.split('/')[4])
+    const userInfo = ref('')
+    watch(user, () => userInfo.value = '')
     const showSidebar= ref(false)
-    return { showSidebar, url, user }
-    // const port = chrome.runtime.connect()
-    // port.onMessage.addListener(msg => console.log(msg))
+
+    const loadInfo = async () => {
+      const response = await fetch(`https://looch.io/enrich?linkedin_url=linkedin.com/in/${user.value}`)
+      userInfo.value= await response.json()
+      console.log('USER INFO: ', userInfo.value)
+    }
+    return { 
+      showSidebar,
+      user, userInfo, loadInfo
+    }
   }
 }
 </script>
@@ -81,9 +93,13 @@ export default {
     display: flex;
     justify-content: flex-end;
   }
-  &__navigation {
+  &__test-info {
     position: absolute;
     right: 100%;
+    padding: 10px;
+    max-height: 100%;
+    overflow-y: scroll;
+    background: lightseagreen;
   }
   &__body {
     flex-grow: 1;
