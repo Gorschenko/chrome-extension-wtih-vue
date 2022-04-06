@@ -37,7 +37,6 @@ import TheNavigation from './components/single/TheNavigation'
 import BaseCloseButton from '@/common/BaseCloseButton'
 import TheStartButton from './components/single/TheStartButton'
 import { ref, computed, watch } from 'vue'
-
 export default {
   components: { BaseCloseButton, TheStartButton, TheNavigation },
   setup () {
@@ -86,12 +85,11 @@ export default {
 }
 
 .sidebar {
-  padding: 16px;
-  background: $bg-primary;
   box-shadow: $bs;
   &__close-button {
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    right: 8px;
+    top: 8px;
   }
   &__test-info {
     position: absolute;

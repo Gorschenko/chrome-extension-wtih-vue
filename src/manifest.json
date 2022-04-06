@@ -5,17 +5,23 @@
   "permissions": ["storage", "tabs"],
   "host_permissions": ["https://looch.io/*"],
   "background": {
-      "service_worker": "background.bundle.js"
+    "service_worker": "background.bundle.js"
   },
   "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "css": ["popup.bundle.css", "content.bundle.css"],
-        "js": ["content.bundle.js"]
-      }
+    {
+      "matches": ["<all_urls>"],
+      "css": ["popup.bundle.css", "content.bundle.css"],
+      "js": ["content.bundle.js"]
+    }
     ],
   "action": {
-      "default_popup": "popup.html"
+    "default_popup": "popup.html"
   },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/images/ball.gif", "assets/images/navigation.png"],
+      "matches": ["<all_urls>"]
+    }
+  ],
   "manifest_version": 3
 }

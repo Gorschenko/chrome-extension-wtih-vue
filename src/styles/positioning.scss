@@ -14,18 +14,21 @@
   margin-bottom: 32px;
 }
 
+.mr-8 {
+  margin-right: 8px;
+}
+
 .mr-16 {
   margin-right: 16px;
 }
 
 .row {
   display: flex;
+  align-items: center;
 }
 
 .row_between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include row_between;
 }
 
 .center {

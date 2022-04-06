@@ -44,6 +44,10 @@ module.exports = {
           from: path.resolve(__dirname, 'src/manifest.json'),
           to: path.resolve(__dirname, 'dist')
         },
+        {
+          from: path.resolve(__dirname, 'src/assets'),
+          to: path.resolve(__dirname, 'dist/assets')
+        },
       ]
     }),
     new VueLoaderPlugin(),

@@ -67,7 +67,26 @@
 }
 .link {
   color: $cl-primary-900;
-  &_hovered_primary:link {
+  &_hovered_primary:hover {
     color: $cl-primary-hover;
   }
+}
+
+.cl-primary {
+  color: $cl-primary-900;
+}
+
+.i-white {
+  fill: $t-simple;
+}
+
+.i-secondary {
+  fill: $t-secondary;
+}
+
+.i-success {
+  fill: $t-success;
+}
+.i-notify {
+  fill: $t-notify;
 }
