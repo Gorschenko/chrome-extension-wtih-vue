@@ -6,12 +6,18 @@
   &_s {
     padding: 6px 12px;
   }
+  &_xs {
+    padding: 4px 8px;
+  }
   &_primary {
     color: $t-simple;
     background: $cl-primary-900;
   }
   &_hovered_primary:hover {
     background: $cl-primary-hover;
+  }
+  &_bordered_secondary {
+    border: 1px solid $bg-secondary;
   }
   &_circle {
     border-radius: 50%;
