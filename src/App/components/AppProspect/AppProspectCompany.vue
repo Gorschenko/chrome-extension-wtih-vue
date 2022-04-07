@@ -1,5 +1,5 @@
 <template>
-<section class="header">
+<section class="company">
   <header class="user mb-24">
     <div class="row mb-16">
       <div class="user__photo" />
@@ -47,6 +47,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
+.company {
+  padding: 24px 16px;
+  background: $t-simple;
+}
 .user {
   &__photo {
     width: 40px;
@@ -54,25 +58,6 @@ export default {
     margin-right: 8px;
     border-radius: 50%;
     background: coral;
-  }
-}
-.header {
-  padding: 24px 16px;
-  background: $t-simple;
-  &__button {
-    @include center;
-    padding: 6px 73px;
-    border-radius: 100px;
-    color: $t-simple;
-    background: $cl-primary-900;
-    cursor: pointer;
-    &:hover {
-      background: $cl-primary-hover;
-    }
-  }
-  &__image {
-    width: 32px;
-    height: 32px;
   }
 }
 </style>

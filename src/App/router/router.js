@@ -13,7 +13,9 @@ const router = createRouter({
     { path: '/prospect', name: 'Prospect', component: AppProspect },
     { path: '/employees', name: 'Employees', component: AppEmployees },
     { path: '/settings', name: 'Settings', component: AppSettings },
-  ]
+  ],
+  linkActiveClass: 'active-route',
+  linkExactActiveClass: 'active-route',
 })
 
 export default router

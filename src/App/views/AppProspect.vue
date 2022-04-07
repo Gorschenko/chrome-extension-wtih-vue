@@ -1,7 +1,9 @@
 <template>
   <section class="prospect">
-    <AppProspectUser/>
-    <AppProspectCompany class="prospect__body" />
+    <AppProspectUser class="mb-24" />
+    <div class="prospect__body">
+      <AppProspectCompany />
+    </div>
     <AppFooter />
   </section>
 </template>

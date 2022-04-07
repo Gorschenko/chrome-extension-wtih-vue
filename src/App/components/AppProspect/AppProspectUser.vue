@@ -62,8 +62,8 @@
         </button>
       </div>
     </footer>
+    <AppProspectInfoModal :show-info-modal="showInfoModal" @close="showInfoModal = false" />
   </header>
-  <AppProspectInfoModal :show-info-modal="showInfoModal" @close="showInfoModal = false" />
 </template>
 <script>
 import IconArrowBottom from '@/assets/icons/IconArrowBottom'
