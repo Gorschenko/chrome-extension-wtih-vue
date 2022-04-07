@@ -60,12 +60,12 @@ export default {
   padding: 24px 16px;
   background: $t-simple;
   &__button {
-      @include center;
-      padding: 6px 73px;
-      border-radius: 100px;
-      color: $t-simple;
-      background: $cl-primary-900;
-      cursor: pointer;
+    @include center;
+    padding: 6px 73px;
+    border-radius: 100px;
+    color: $t-simple;
+    background: $cl-primary-900;
+    cursor: pointer;
     &:hover {
       background: $cl-primary-hover;
     }

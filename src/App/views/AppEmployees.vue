@@ -6,7 +6,7 @@
     <section class="employees__body">
       <AppEmployeesCard v-for="i in 5"/>
     </section>
-    <AppFooter class="employyes__footer"/>
+    <AppFooter class="employees__footer"/>
   </section>
 </template>
 <script>
@@ -30,9 +30,6 @@ export default {
   }
   &__body {
     flex-grow: 1;
-  }
-  &__footer {
-    align-self: flex-end;
   }
 }
 </style>

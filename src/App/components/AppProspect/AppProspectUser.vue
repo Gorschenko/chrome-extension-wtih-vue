@@ -10,7 +10,7 @@
       </div>
       <button class="button button_s button_primary button_hovered_primary">
         <span class="text text_s">Add to Campaign</span>
-        <IconArrow class="i-white"/>
+        <IconArrowBottom class="i-white"/>
       </button>
     </header>
     <section class="mb-24">
@@ -56,42 +56,44 @@
         </button>
         <img :src="image" class="header__image">
       </div>
-      <p class="text_xs text_center text_secondary">How does enrichment work?</p>
+      <div class="center">
+        <button class="button" @click="showInfoModal = true ">
+          <span class="text text_xs text_secondary">How does enrichment work?</span>
+        </button>
+      </div>
     </footer>
   </header>
+  <AppProspectInfoModal :show-info-modal="showInfoModal" @close="showInfoModal = false" />
 </template>
 <script>
-import IconArrow from '@/assets/icons/IconArrow'
+import IconArrowBottom from '@/assets/icons/IconArrowBottom'
 import IconCheckMark from '@/assets/icons/IconCheckMark'
 import IconCross from '@/assets/icons/IconCross'
 import IconMessage from '@/assets/icons/IconMessage'
 import IconPhone from '@/assets/icons/IconPhone'
+import AppProspectInfoModal from './AppProspectInfoModal'
+import { ref } from 'vue'
+
 export default {
   components: {
-    IconArrow,
+    IconArrowBottom,
     IconCheckMark,
     IconCross,
     IconMessage,
-    IconPhone
+    IconPhone,
+    AppProspectInfoModal
   },
   setup () {
+    const showInfoModal = ref(false)
     return {
-      image: chrome.runtime.getURL('assets/images/ball.gif')
+      image: chrome.runtime.getURL('assets/images/ball.gif'),
+      showInfoModal
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 @import '@/styles/main.scss';
-.user {
-  &__photo {
-    width: 40px;
-    height: 40px;
-    margin-right: 8px;
-    border-radius: 50%;
-    background: green;
-  }
-}
 .header {
   padding: 40px 16px 8px;
   background: $t-simple;
@@ -110,5 +112,20 @@ export default {
     width: 32px;
     height: 32px;
   }
+}
+.user {
+  &__photo {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: green;
+  }
+}
+.alert-wrapper {
+  position: fixed;
+  z-index: 9999999999;
+  top: 0;
+  right: 320px;
 }
 </style>

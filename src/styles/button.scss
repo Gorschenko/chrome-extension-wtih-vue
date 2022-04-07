@@ -13,8 +13,14 @@
     color: $t-simple;
     background: $cl-primary-900;
   }
+  &_secondary {
+    background: $cl-secondary;
+  }
   &_hovered_primary:hover {
     background: $cl-primary-hover;
+  }
+  &_hovered_secondary:hover {
+    background: $cl-secondary-hover;
   }
   &_bordered_secondary {
     border: 1px solid $bg-secondary;

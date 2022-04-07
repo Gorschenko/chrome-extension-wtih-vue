@@ -1,7 +1,7 @@
 <template>
   <section class="prospect">
-    <AppProspectUser />
-    <AppProspectCompany />
+    <AppProspectUser/>
+    <AppProspectCompany class="prospect__body" />
     <AppFooter />
   </section>
 </template>
@@ -18,7 +18,10 @@ export default {
 .prospect {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-content: flex-start;
   background: $cl-primary-25;
+  &__body {
+    flex-grow: 1;
+  }
 }
 </style>

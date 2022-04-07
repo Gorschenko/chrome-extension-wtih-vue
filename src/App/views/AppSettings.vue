@@ -5,31 +5,31 @@
     </header>
     <section class="settings__body">
       <div class="settings__item">
-        <IconDashboard class="i-secondary mr-8" />
+        <IconDashboard class="i-tetriary mr-8" />
         <span class="text_m text_primary">Dashboard</span>
       </div>
       <div class="settings__item">
-        <IconCase class="i-secondary mr-8" />
+        <IconCase class="i-tetriary mr-8" />
         <span class="text_m text_primary">View Campaigns</span>
       </div>
       <div class="settings__item settings__item_bordered">
-        <IconPapper class="i-secondary mr-8" />
+        <IconPapper class="i-tetriary mr-8" />
         <span class="text_m text_primary">View Prospects</span>
       </div>
       <div class="settings__item">
-        <IconCase class="i-secondary mr-8" />
+        <IconCase class="i-tetriary mr-8" />
         <span class="text_m text_primary">View Integrations</span>
       </div>
       <div class="settings__item settings__item_bordered">
-        <IconMessage class="i-secondary mr-8" />
+        <IconMessage class="i-tetriary mr-8" />
         <span class="text_m text_primary">Help Centers</span>
       </div>
       <div class="settings__item settings__item_bordered">
-        <IconExpland class="i-secondary mr-8" />
+        <IconExpland class="i-tetriary mr-8" />
         <span class="text_m text_primary">Auto Expand Plugin</span>
       </div>
     </section>
-    <AppFooter class="employyes__footer"/>
+    <AppFooter/>
   </section>
 </template>
 <script>
@@ -58,9 +58,6 @@ export default {
   }
   &__body {
     flex-grow: 1;
-  }
-  &__footer {
-    align-self: flex-end;
   }
   &__item {
     display: flex;
