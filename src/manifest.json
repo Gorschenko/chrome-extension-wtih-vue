@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Test",
   "permissions": ["storage", "tabs"],
+  "icons": {
+    "16": "/assets/icons/started/logo_16.png",
+    "48": "/assets/icons/started/logo_48.png",
+    "128": "/assets/icons/started/logo_128.png"
+  },
   "host_permissions": ["https://looch.io/*"],
   "background": {
     "service_worker": "background.bundle.js"
@@ -15,7 +20,8 @@
     }
     ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": "/assets/icons/started/logo_48.png"
   },
   "web_accessible_resources": [
     {

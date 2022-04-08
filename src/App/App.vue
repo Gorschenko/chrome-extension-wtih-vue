@@ -91,8 +91,8 @@ export default {
     position: absolute;
     right: 100%;
     padding: 10px;
-    max-height: 100%;
-    // width: 300px;
+    height: 100%;
+    width: 280px;
     overflow-y: scroll;
     background: lightseagreen;
   }

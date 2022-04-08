@@ -25,6 +25,7 @@ export default {
 @import '@/styles/main.scss';
 .navigation {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 </style>
