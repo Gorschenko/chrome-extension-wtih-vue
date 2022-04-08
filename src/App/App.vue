@@ -10,8 +10,8 @@
       <div class="sidebar__test-info">
         <span class="text text_block text_l text_bold">Test info:</span>
         <TheNavigation />
-        <span class="text text_block text_l text_bold">Info about user: </span>
-        <span class="text text_block text_primary text_m text_bold">{{ userInfo }}</span>
+        <!-- <span class="text text_block text_l text_bold">Info about user: </span>
+        <span class="text text_block text_primary text_m text_bold">{{ userInfo }}</span> -->
       </div>
       <div class="sidebar__close-button">
         <BaseCloseButton @close="showSidebar = !showSidebar" />
@@ -92,7 +92,7 @@ export default {
     right: 100%;
     padding: 10px;
     max-height: 100%;
-    width: 300px;
+    // width: 300px;
     overflow-y: scroll;
     background: lightseagreen;
   }

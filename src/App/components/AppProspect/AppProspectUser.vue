@@ -2,7 +2,7 @@
   <header class="header">
     <header class="user mb-24">
       <div class="row mb-16">
-        <!-- <img :src="userImageSrc" class="user__photo" /> -->
+        <img class="user__photo" />
         <div>
           <p class="text_m text_primary text_bold">{{ user.first_name }} {{ user.last_name }}</p>
           <p class="text_xs text_secondary">{{ user.job_title }}</p>
@@ -123,6 +123,7 @@ export default {
     height: 40px;
     margin-right: 8px;
     border-radius: 50%;
+    background: green;
   }
 }
 .alert-wrapper {
