@@ -23,7 +23,7 @@ import { ref, } from 'vue'
 import { useRouter } from 'vue-router'
 export default {
   props: ['show-info-modal'],
-  emits: ['close'],
+  emits: ['close', 'update:showInfoModal'],
   components: { IconArrowRight },
   setup (_, {emit}) {
     const router = useRouter()
@@ -42,7 +42,10 @@ export default {
     ]
     const toNextStep = () => {
       activeStep.value++
-      steps[activeStep.value].route === router.currentRoute.value.name ? '' : router.push(steps[activeStep.value].route)
+      if (steps[activeStep.value].route !== router.currentRoute.value.name) {
+        router.push(steps[activeStep.value].route)
+        emit('update:showInfoModal', true)
+      }
 
       // if (activeStep.value === steps.length - 1) {
       //   emit('close')

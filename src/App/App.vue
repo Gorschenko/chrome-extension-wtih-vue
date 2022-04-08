@@ -10,9 +10,6 @@
       <div class="sidebar__test-info">
         <span class="text text_block text_l text_bold">Test info:</span>
         <TheNavigation />
-        <span class="text text_block text_l text_bold">User: </span>
-        <span class="text text_block text_primary text_m text_bold">{{ user }}</span>
-        <button class="button button_s button_primary" @click="loadInfo">Load info</button>
         <span class="text text_block text_l text_bold">Info about user: </span>
         <span class="text text_block text_primary text_m text_bold">{{ userInfo }}</span>
       </div>
@@ -37,24 +34,23 @@ import TheNavigation from './components/single/TheNavigation'
 import BaseCloseButton from '@/common/BaseCloseButton'
 import TheStartButton from './components/single/TheStartButton'
 import { ref, computed, watch } from 'vue'
+import { useStore } from 'vuex'
 export default {
   components: { BaseCloseButton, TheStartButton, TheNavigation },
   setup () {
-    chrome.runtime.onMessage.addListener(msg => url.value = msg.url)
+    const store = useStore()
+    const showSidebar = ref(false)
     const url = ref('')
-    const user = computed(() => url.value.split('/')[4])
-    const userInfo = ref('')
-    watch(user, () => userInfo.value = '')
-    const showSidebar= ref(false)
-
-    const loadInfo = async () => {
-      const response = await fetch(`https://looch.io/enrich?linkedin_url=linkedin.com/in/${user.value}`)
-      userInfo.value= await response.json()
-      console.log('USER INFO: ', userInfo.value)
-    }
+    chrome.runtime.onMessage.addListener(msg => url.value = msg.url) 
+    watch(url, url => {
+      if (url.includes('linkedin.com/in/')) {
+        const user = url.split('/')[4]
+        store.dispatch('getUserInfo', user)
+      }
+    })
+    const userInfo = computed(() => store.getters.user)
     return { 
-      showSidebar,
-      user, userInfo, loadInfo
+      showSidebar, url, userInfo
     }
   }
 }
@@ -96,6 +92,7 @@ export default {
     right: 100%;
     padding: 10px;
     max-height: 100%;
+    width: 300px;
     overflow-y: scroll;
     background: lightseagreen;
   }

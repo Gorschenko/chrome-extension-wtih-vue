@@ -1,77 +1,57 @@
 <template>
-<section class="popup">
-  <header class="popup__header">
-    <svg width="63" height="24" viewBox="0 0 63 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6521 14.5567C17.6521 15.8491 17.4306 17.0287 16.9876 18.0955C16.5446 19.1624 15.9419 20.0778 15.1794 20.842C14.417 21.6062 13.5232 22.1986 12.4981 22.6191C11.4729 23.0397 10.3732 23.25 9.19865 23.25C8.0344 23.25 6.93972 23.0346 5.91462 22.6038C4.88944 22.1729 3.99312 21.5729 3.22551 20.8035C2.45798 20.0342 1.85271 19.1187 1.40969 18.0571C0.96667 16.9954 0.745117 15.8286 0.745117 14.5567V0.75H0.996011C3.19608 0.75 4.97957 2.52569 4.97957 4.71611V7.60195C5.20622 7.3147 5.48188 7.0583 5.80639 6.83266C6.13091 6.60693 6.48124 6.42228 6.85732 6.27869C7.23331 6.13511 7.6223 6.02487 8.02412 5.94788C8.42594 5.87098 8.81739 5.83248 9.19865 5.83248C10.3732 5.83248 11.4729 6.05048 12.4981 6.48646C13.5232 6.92236 14.417 7.53011 15.1794 8.30971C15.9419 9.08932 16.5446 10.0099 16.9876 11.0716C17.4306 12.1333 17.6521 13.2949 17.6521 14.5567ZM5.06162 11.3439C5.82853 10.3355 6.94684 9.59438 8.27651 9.3314C11.1777 8.75744 13.9937 10.6752 14.5607 13.6113C15.1279 16.5475 13.2329 19.3972 10.3316 19.9712C7.43035 20.5452 4.61447 18.6273 4.04733 15.6912C4.02888 15.5958 4.01306 15.5005 3.99971 15.4049L3.98653 15.303C3.94112 14.9549 3.78361 13.7538 3.58287 12.3103C3.43924 11.2779 3.26398 9.82322 3.26398 9.82322C3.26398 9.82322 4.16478 10.5274 5.06162 11.3439ZM6.78652 13.8233C7.23805 13.8233 7.60464 14.1943 7.60464 14.6513C7.60464 15.1082 7.23805 15.4792 6.78652 15.4792C6.33498 15.4792 5.96839 15.1082 5.96839 14.6513C5.96839 14.1943 6.33498 13.8233 6.78652 13.8233ZM11.8215 13.8233C12.2731 13.8233 12.6397 14.1943 12.6397 14.6513C12.6397 15.1082 12.2731 15.4792 11.8215 15.4792C11.37 15.4792 11.0034 15.1082 11.0034 14.6513C11.0034 14.1943 11.37 13.8233 11.8215 13.8233ZM9.28491 13.8233C9.73645 13.8233 10.103 14.1943 10.103 14.6513C10.103 15.1082 9.73645 15.4792 9.28491 15.4792C8.83337 15.4792 8.46678 15.1082 8.46678 14.6513C8.46678 14.1943 8.83337 13.8233 9.28491 13.8233Z" fill="#2B84D0"/>
-      <path d="M33.708 21.5838C33.708 21.8212 33.67 22.0416 33.5939 22.2451C33.5178 22.4486 33.4133 22.6246 33.2802 22.773C33.1472 22.9213 32.9912 23.038 32.8126 23.1228C32.6339 23.2075 32.4418 23.2499 32.2365 23.2499H25.5295C25.1645 23.2499 24.7748 23.2034 24.3603 23.1101C23.9459 23.0167 23.5372 22.8663 23.1342 22.6585C22.7311 22.4508 22.3414 22.188 21.965 21.87C21.5886 21.552 21.2597 21.1662 20.9783 20.7126C20.697 20.2589 20.4707 19.7354 20.2997 19.1418C20.1285 18.5482 20.043 17.8784 20.043 17.1323V9.50098H23.0087V17.1323C23.0087 17.5647 23.0752 17.9526 23.2083 18.296C23.3414 18.6395 23.5219 18.9341 23.7501 19.18C23.9782 19.4259 24.2463 19.6146 24.5542 19.746C24.8622 19.8774 25.1949 19.9431 25.5524 19.9431H30.7422V9.50098H33.708V21.5838Z" fill="#2B84D0"/>
-      <path d="M48.0884 10.5185C48.2101 10.8322 48.2424 11.1502 48.1853 11.4724C48.1283 11.7946 47.9972 12.0744 47.7919 12.3119L40.9365 19.9431H48.0656V23.2499H37.3663C37.0622 23.2499 36.7865 23.1545 36.5393 22.9638C36.2922 22.773 36.1078 22.5292 35.9861 22.2324C35.8721 21.9188 35.8436 21.5986 35.9006 21.2722C35.9576 20.9457 36.0964 20.6595 36.3169 20.4137L43.138 12.8079H36.009V9.50098H46.731C47.0276 9.50098 47.2995 9.59006 47.5466 9.76813C47.7937 9.94621 47.9743 10.1963 48.0884 10.5185Z" fill="#2B84D0"/>
-      <path d="M62.1295 10.5185C62.2511 10.8322 62.2834 11.1502 62.2264 11.4724C62.1693 11.7946 62.0382 12.0744 61.8329 12.3119L54.9776 19.9431H62.1066V23.2499H51.4073C51.1032 23.2499 50.8275 23.1545 50.5804 22.9638C50.3332 22.773 50.1488 22.5292 50.0271 22.2324C49.9131 21.9188 49.8846 21.5986 49.9416 21.2722C49.9987 20.9457 50.1374 20.6595 50.358 20.4137L57.179 12.8079H50.05V9.50098H60.7721C61.0686 9.50098 61.3405 9.59006 61.5876 9.76813C61.8348 9.94621 62.0153 10.1963 62.1295 10.5185Z" fill="#2B84D0"/>
-    </svg>
-    <BaseCloseButton @close="closePopup" />
-  </header>
-  <section class="popup__body">
-    <div v-if="onLinkedin">
-      <h6 class="text title_xs text_primary mb-8">Welcome to Buzz</h6>
-      <p class="text_s mb-16">
-        <span class="text_primary">Don’t have an account? </span>
-        <a class="link link_hovered_primary" href="https://divo.ai/auth/sign-up">Sign up for free</a>
-      </p>
-      <button class="button button_s button_primary button_hovered_primary">
-        <span class="text text_s">Log in with email</span>
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8.66665 2L10.862 4.19533L6.19531 8.862L7.13798 9.80467L11.8046 5.138L14 7.33333V2H8.66665Z" fill="white"/>
-        <path d="M12.6667 12.6667H3.33333V3.33333H8L6.66667 2H3.33333C2.598 2 2 2.598 2 3.33333V12.6667C2 13.402 2.598 14 3.33333 14H12.          6667C13.402 14 14 13.402 14 12.6667V9.33333L12.6667 8V12.6667Z" fill="white"/>
-        </svg>
-      </button>
-    </div>
-    <ul v-else>
-      <li class="mb-32">
-        <a href="" class="row_between">
-          <span class="row_between">
-            <svg class="mr-16" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M10 18C11.775 17.9996 13.4988 17.4054 14.897 16.312L19.293 20.708L20.707 19.294L16.311 14.898C17.405 13.4997 17.9996 11.7754 18 10C18 5.589 14.411 2 10 2C5.589 2 2 5.589 2 10C2 14.411 5.589 18 10 18ZM10 4C13.309 4 16 6.691 16 10C16 13.309 13.309 16 10 16C6.691 16 4 13.309 4 10C4 6.691 6.691 4 10 4Z" fill="#0A2033" fill-opacity="0.3"/>
-            </svg>
-            <span class="text_m text_primary">Search on Buzz</span>
-          </span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 3L16.293 6.293L9.29297 13.293L10.707 14.707L17.707 7.707L21 11V3H13Z" fill="#0A2033" fill-opacity="0.3"/>
-            <path d="M19 19H5V5H12L10 3H5C3.897 3 3 3.897 3 5V19C3 20.103 3.897 21 5 21H19C20.103 21 21 20.103 21 19V14L19 12V19Z" fill="#0A2033" fill-opacity="0.3"/>
-          </svg>
-        </a>
-      </li>
-      <li>
-        <a href="" class="row_between">
-          <span class="row_between">
-            <svg class="mr-16" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4.98292 7.19698C6.19132 7.19698 7.17092 6.21738 7.17092 5.00898C7.17092 3.80058 6.19132 2.82098 4.98292 2.82098C3.77452 2.82098 2.79492 3.80058 2.79492 5.00898C2.79492 6.21738 3.77452 7.19698 4.98292 7.19698Z" fill="#0A2033" fill-opacity="0.3"/>
-              <path d="M9.23673 8.85499V20.994H13.0057V14.991C13.0057 13.407 13.3037 11.873 15.2677 11.873C17.2047 11.873 17.2287 13.684 17.2287 15.091V20.995H20.9997V14.338C20.9997 11.068 20.2957 8.55499 16.4737 8.55499C14.6387 8.55499 13.4087 9.56199 12.9057 10.515H12.8547V8.85499H9.23673ZM3.09473 8.85499H6.86973V20.994H3.09473V8.85499Z" fill="#0A2033" fill-opacity="0.3"/>
-            </svg>
-            <span class="text_m text_primary">Go to LinkedIn</span>
-          </span>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13 3L16.293 6.293L9.29297 13.293L10.707 14.707L17.707 7.707L21 11V3H13Z" fill="#0A2033" fill-opacity="0.3"/>
-            <path d="M19 19H5V5H12L10 3H5C3.897 3 3 3.897 3 5V19C3 20.103 3.897 21 5 21H19C20.103 21 21 20.103 21 19V14L19 12V19Z" fill="#0A2033" fill-opacity="0.3"/>
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </section>
+  <section class="popup">
+    <header class="popup__header">
+      <IconBuzzLogoLong />
+      <BaseCloseButton @close="closePopup" />
+    </header>
+    <section class="popup__body">
+      <div v-if="onLinkedin">
+        <h6 class="text title_xs text_primary mb-8">Welcome to Buzz</h6>
+        <p class="text_s mb-16">
+          <span class="text_primary">Don’t have an account? </span>
+          <a class="link link_hovered_primary" href="https://divo.ai/auth/sign-up">Sign up for free</a>
+        </p>
+        <button class="button button_s button_primary button_hovered_primary">
+          <span class="text text_s">Log in with email</span>
+          <IconLink class="i-white" />
+        </button>
+      </div>
+      <ul v-else class="popup__body-list">
+        <li class="" v-for="item in list" :key="item">
+          <a href="" class="row_between">
+            <span class="row_between">
+              <component :is="item.icon" class="mr-16 i-tetriary" />
+              <span class="text_m text_primary">{{ item.name }}</span>
+            </span>
+            <IconLink class="i-tetriary" />
+          </a>
+        </li>
+      </ul>
+    </section>
   </section>
 </template>
 
 <script>
 import BaseCloseButton from '@/common/BaseCloseButton'
+import IconLoop from '@/assets/icons/IconLoop'
+import IconLink from '@/assets/icons/IconLink'
+import IconLinkedin from '@/assets/icons/IconLinkedin'
+import IconBuzzLogoLong from '@/assets/icons/IconBuzzLogoLong'
 import { ref, computed } from 'vue'
 export default {
-  components: { BaseCloseButton },
+  components: { BaseCloseButton, IconLoop, IconLink, IconLinkedin, IconBuzzLogoLong },
   setup () {
     const closePopup = () => window.close()
     const url = ref('')
     const onLinkedin = computed(() => new URL(url.value).hostname === 'www.linkedin.com')
-
+    const list = [
+      { name: 'Search on Buzz', icon: 'IconLoop' },
+      { name: 'Go to LinkedIn', icon: 'IconLinkedin' }
+    ]
     chrome.tabs.query({active: true, currentWindow: true}, tabs => url.value = tabs[0].url)
     return {
-      closePopup, onLinkedin
+      closePopup, onLinkedin,
+      list
     }
   }
 }
@@ -121,6 +101,11 @@ export default {
   }
   &__body {
     padding: 16px 24px 24px;
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
   }
 }
 </style>

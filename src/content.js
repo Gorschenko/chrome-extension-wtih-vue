@@ -5,4 +5,5 @@ document.body.insertAdjacentElement('beforeend', app);
 import { createApp } from 'vue';
 import App from './App/App';
 import router from './App/router/router'
-createApp(App).use(router).mount('#buzz-sidebar');
+import { store } from './App/store/store'
+createApp(App).use(router).use(store).mount('#buzz-sidebar');

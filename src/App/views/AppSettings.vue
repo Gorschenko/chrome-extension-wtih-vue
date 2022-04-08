@@ -4,36 +4,23 @@
       <p class="text_m text_primary text_bold">Settings</p>
     </header>
     <section class="settings__body">
-      <div class="settings__item">
-        <IconDashboard class="i-tetriary mr-8" />
-        <span class="text_m text_primary">Dashboard</span>
-      </div>
-      <div class="settings__item">
-        <IconCase class="i-tetriary mr-8" />
-        <span class="text_m text_primary">View Campaigns</span>
-      </div>
-      <div class="settings__item settings__item_bordered">
-        <IconPapper class="i-tetriary mr-8" />
-        <span class="text_m text_primary">View Prospects</span>
-      </div>
-      <div class="settings__item">
-        <IconCase class="i-tetriary mr-8" />
-        <span class="text_m text_primary">View Integrations</span>
-      </div>
-      <div class="settings__item settings__item_bordered">
-        <IconMessage class="i-tetriary mr-8" />
-        <span class="text_m text_primary">Help Centers</span>
-      </div>
-      <div class="settings__item settings__item_bordered">
-        <IconExpland class="i-tetriary mr-8" />
-        <span class="text_m text_primary">Auto Expand Plugin</span>
+      <div
+        v-for="item in list"
+        :key="item"
+        :class="{
+          'settings__item': true,
+          'settings__item_bordered': item.isBordered
+        }"
+      >
+        <component :is="item.icon" class="i-tetriary mr-8" />
+        <span class="text_m text_primary">{{ item.name }}</span>
       </div>
     </section>
-    <AppFooter/>
+    <TheFooter/>
   </section>
 </template>
 <script>
-import AppFooter from '../components/AppFooter'
+import TheFooter from '../components/TheFooter'
 import IconDashboard from '@/assets/icons/IconDashboard'
 import IconCase from '@/assets/icons/IconCase'
 import IconPapper from '@/assets/icons/IconPapper'
@@ -41,7 +28,20 @@ import IconMessage from '@/assets/icons/IconMessage'
 import IconExpland from '@/assets/icons/IconExpland'
 
 export default {
-  components: { AppFooter, IconDashboard, IconCase, IconPapper, IconMessage, IconExpland}
+  components: { TheFooter, IconDashboard, IconCase, IconPapper, IconMessage, IconExpland},
+  setup () {
+    const list = [
+      { name: 'Dashboard', icon: 'IconDashboard', isBordered: false },
+      { name: 'View Campaigns', icon: 'IconCase', isBordered: false },
+      { name: 'View Prospects', icon: 'IconPapper', isBordered: true },
+      { name: 'View Integrations', icon: 'IconCase', isBordered: false },
+      { name: 'Help Centers', icon: 'IconMessage', isBordered: true },
+      { name: 'Auto Expand Plugin', icon: 'IconExpland', isBordered: false },
+    ]
+    return {
+      list
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>

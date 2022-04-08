@@ -4,15 +4,15 @@
     <div class="prospect__body">
       <AppProspectCompany />
     </div>
-    <AppFooter />
+    <TheFooter />
   </section>
 </template>
 <script>
-import AppFooter from '../components/AppFooter'
+import TheFooter from '../components/TheFooter'
 import AppProspectUser from '../components/AppProspect/AppProspectUser'
 import AppProspectCompany from '../components/AppProspect/AppProspectCompany'
 export default {
-  components: { AppFooter, AppProspectUser, AppProspectCompany }
+  components: { TheFooter, AppProspectUser, AppProspectCompany }
 }
 </script>
 <style lang="scss" scoped>

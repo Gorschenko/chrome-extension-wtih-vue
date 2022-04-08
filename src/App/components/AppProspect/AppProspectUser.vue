@@ -2,10 +2,10 @@
   <header class="header">
     <header class="user mb-24">
       <div class="row mb-16">
-        <div class="user__photo" />
+        <!-- <img :src="userImageSrc" class="user__photo" /> -->
         <div>
-          <p class="text_m text_primary text_bold">Sergey Kleymenov</p>
-          <p class="text_xs text_secondary">VP of User Acquisition</p>
+          <p class="text_m text_primary text_bold">{{ user.first_name }} {{ user.last_name }}</p>
+          <p class="text_xs text_secondary">{{ user.job_title }}</p>
         </div>
       </div>
       <button class="button button_s button_primary button_hovered_primary">
@@ -19,14 +19,14 @@
         <p class="row_between mb-16">
           <span class="row_between">
             <IconMessage class="i-secondary mr-8" />
-            <span class="text_s cl-primary">sergey@buzz.ai</span>
+            <span class="text_s cl-primary">{{ user.email }}</span>
           </span>
           <IconCheckMark class="i-success" />
         </p>
         <p class="row_between">
           <span class="row_between">
             <IconPhone class="i-secondary mr-8" />
-            <span class="text_s cl-primary">+4 (406) 555-0120</span>
+            <span class="text_s cl-primary">{{ user.phone }}</span>
           </span>
           <IconCheckMark class="i-success" />
         </p>
@@ -36,14 +36,14 @@
         <p class="row_between mb-16">
           <span class="row_between">
             <IconMessage class="i-secondary mr-8" />
-            <span class="text_s cl-primary">company@flo.health</span>
+            <span class="text_s cl-primary">{{ user.work_email }}</span>
           </span>
           <IconCheckMark class="i-success" />
         </p>
         <p class="row_between">
           <span class="row_between">
             <IconPhone class="i-secondary mr-8" />
-            <span class="text_s cl-primary">+2 (209) *****</span>
+            <span class="text_s cl-primary">{{ user.company_phone }}</span>
           </span>
           <IconCross class="i-notify" />
         </p>
@@ -57,12 +57,12 @@
         <img :src="image" class="header__image">
       </div>
       <div class="center">
-        <button class="button" @click="showInfoModal = true ">
+        <button class="button">
           <span class="text text_xs text_secondary">How does enrichment work?</span>
         </button>
       </div>
     </footer>
-    <AppProspectInfoModal :show-info-modal="showInfoModal" @close="showInfoModal = false" />
+    <!-- <AppProspectInfoModal :show-info-modal="showInfoModal" @close="showInfoModal = false" /> -->
   </header>
 </template>
 <script>
@@ -71,8 +71,9 @@ import IconCheckMark from '@/assets/icons/IconCheckMark'
 import IconCross from '@/assets/icons/IconCross'
 import IconMessage from '@/assets/icons/IconMessage'
 import IconPhone from '@/assets/icons/IconPhone'
-import AppProspectInfoModal from './AppProspectInfoModal'
-import { ref } from 'vue'
+// import AppProspectInfoModal from './AppProspectInfoModal'
+import { ref, computed } from 'vue'
+import { useStore } from 'vuex'
 
 export default {
   components: {
@@ -81,13 +82,16 @@ export default {
     IconCross,
     IconMessage,
     IconPhone,
-    AppProspectInfoModal
+    // AppProspectInfoModal
   },
   setup () {
-    const showInfoModal = ref(false)
+    const store = useStore()
+    const user = computed(() => store.getters.user)
+    // const userImageSrc = computed(() => document.querySelector('#ember41').src)
     return {
       image: chrome.runtime.getURL('assets/images/ball.gif'),
-      showInfoModal
+      // showInfoModal
+      user
     }
   }
 }
@@ -119,7 +123,6 @@ export default {
     height: 40px;
     margin-right: 8px;
     border-radius: 50%;
-    background: green;
   }
 }
 .alert-wrapper {

@@ -6,14 +6,14 @@
     <section class="employees__body">
       <AppEmployeesCard v-for="i in 5"/>
     </section>
-    <AppFooter class="employees__footer"/>
+    <TheFooter class="employees__footer"/>
   </section>
 </template>
 <script>
-import AppFooter from '../components/AppFooter'
+import TheFooter from '../components/TheFooter'
 import AppEmployeesCard from '../components/AppEmployees/AppEmployeesCard'
 export default {
-  components: { AppEmployeesCard, AppFooter }
+  components: { AppEmployeesCard, TheFooter }
 }
 </script>
 <style lang="scss" scoped>
